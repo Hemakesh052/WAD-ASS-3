@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set your desired background color */
+            font-family: Arial, sans-serif; /* Set your desired font family */
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333; /* Set your desired navbar background color */
+            color: #fff; /* Set your desired text color for the navbar */
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .menu a:hover {
+            color: #007bff;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333; /* Set your desired text color for the greeting */
+        }
+
+        .par {
+            color: #555; /* Set your desired text color for the paragraph */
+            line-height: 1.6;
+        }
+
+        .btn, .btnn, .cn {
+            background-color: #007bff; /* Set your desired button background color */
+            color: #fff; /* Set your desired text color for the buttons */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .btn:hover, .btnn:hover, .cn:hover {
+            background-color: #0056b3; /* Set your desired button background color on hover */
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form {
+            max-width: 400px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .link {
+            color: #007bff;
+            margin-top: 10px;
+        }
+
+        .liw {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .icons {
+            margin-top: 10px;
+        }
+
+        .icons a {
+            margin-right: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Online Services</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Search...">
+                <button class="btn">Search</button>
+            </div>
+
+        </div> 
+        <div class="content">
+            <script>
+                let today = new Date();
+                let hour = today.getHours();
+
+                let greeting;
+
+                if (hour >= 5 && hour < 12) {
+                    greeting = 'Good Morning!';
+                } else if (hour >= 12 && hour < 18) {
+                    greeting = 'Good Afternoon!';
+                } else {
+                    greeting = 'Good Evening!';
+                }
+
+                document.write(`<br><h1>${greeting} SPECTRUM</h1>`);
+            </script>
+
+            <p class="par">Welcome to our platform. Please enter your login details.</p>
+
+            <button class="cn"><a href="#">JOIN US</a></button>
+
+            <div class="form">
+                <h2>Login Here</h2>
+                <input type="email" name="email" placeholder="Enter Email Here">
+                <input type="password" name="password" placeholder="Enter Password Here">
+                <button class="btnn"><a href="#">Login</a></button>
+
+                <p class="link">Don't have an account?<br>
+                <a href="#">Sign up</a> here</p>
+                <p class="liw">Log in with</p>
+
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>

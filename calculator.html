@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Calculator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .calculator-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    div {
+      margin: 10px;
+    }
+
+    input, select, button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    h4 {
+      margin-top: 20px;
+    }
+
+    #result {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Calculator</h1>
+
+  <div class="calculator-container">
+    <div>
+      <input type="number" id="num1" step="any" placeholder="Enter number" />
+    </div>
+
+    <div>
+      <select id="operator">
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option>
+      </select>
+    </div>
+
+    <div>
+      <input type="number" id="num2" step="any" placeholder="Enter number" />
+    </div>
+
+    <div>
+      <button onclick="performOperation()">Calculate</button><br>
+    </div>
+    <br>
+    <div>
+      <h4>Result: <span id="result"></span></h4>
+    </div>
+  </div>
+
+  <script>
+    function performOperation() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const operator = document.getElementById('operator').value;
+
+      if (!isNaN(num1) && !isNaN(num2)) {
+        let result;
+        switch (operator) {
+          case 'add':
+            result = num1 + num2;
+            break;
+          case 'subtract':
+            result = num1 - num2;
+            break;
+          case 'multiply':
+            result = num1 * num2;
+            break;
+          case 'divide':
+            if (num2 !== 0) {
+              result = num1 / num2;
+            } else {
+              alert("Cannot divide by zero!");
+              return;
+            }
+            break;
+          default:
+            alert("Invalid operator");
+            return;
+        }
+
+        document.getElementById('result').textContent = result;
+      } else {
+        alert("Please enter valid numbers!");
+      }
+    }
+  </script>
+</body>
+</html>
